@@ -1,0 +1,136 @@
+from tkinter import *
+import tkinter as tk
+root = Tk()
+root.title("Radiji Jishou")
+root.configure(background="white")
+root.maxsize(900,600)
+root.mainloop()
+
+class tkinterApp(tk.Tk):
+    
+    def __init__(self, *args, **kwargs):
+        
+        tk.Tk.__init__(self, *args, **kwargs)
+        
+   #widget
+        left_frame = Frame(root, width=200, height = 400)
+        left_frame.grid(row=0, column =0, padx=10, pady=5) 
+        left_frame = tk.Frame(self)
+    
+        Label(left_frame, text="Radiji").grid(row=0, column=0, padx=5, pady=5)
+        image = PhotoImage(file="radiji-logos_transparent.png")
+        logo = image.subsample(3,3)
+        Label(left_frame, image=logo).grid(row=1, column =0, padx=5,pady=5)
+    
+        right_frame = Frame(root, width=650, height=400, bg ="white")
+        right_frame.grid(row=0, column = 1, padx=10, pady=5) 
+        right_frame = tk.Frame(self)
+    
+        Label(right_frame, image=image).grid(row=0,column=0, padx=5, pady=5)
+    
+        for F in (Home, Resources, Dictonary):
+            frame = F(left_frame, self)
+            
+            self.frames[F]= frame
+            frame.grid(row = 0, column = 0, stikcy ="nsew")
+            
+        self.show_frame(Home)
+        
+class Home(tk.Frame):
+    def __init__(self, parent, controller): 
+        tk.Frame.__init__(self, parent)
+        #widget
+        left_frame = Frame(root, width=200, height = 400)
+        left_frame.grid(row=0, column =0, padx=10, pady=5) 
+
+        Label(left_frame, text="Radiji").grid(row=0, column=0, padx=5, pady=5)
+        image = PhotoImage(file="radiji-logos_transparent.png")
+        logo = image.subsample(3,3)
+        Label(left_frame, image=logo).grid(row=1, column =0, padx=5,pady=5)
+
+        right_frame = Frame(root, width=650, height=400, bg ="white")
+        right_frame.grid(row=0, column = 1, padx=10, pady=5) 
+
+        Label(right_frame, image=image).grid(row=0,column=0, padx=5, pady=5)
+
+            # Create tool bar frame
+        tool_bar = Frame(left_frame, width=180, height=185)
+        tool_bar.grid(row=2, column=0, padx=5, pady=5)
+
+        # Example labels that serve as placeholders for other widgets
+        resources = Button(tool_bar, text="Resources", relief=RAISED).grid(row=0, column=0, padx=5, pady=3, ipadx=10)
+        command = lambda : controller.show_frame(Resources)
+
+
+        dictonary = Button(tool_bar, text="Dictonary", relief=RAISED).grid(row=0, column=1, padx=5, pady=3, ipadx=10)
+
+        # Example labels that could be displayed under the "Tool" menu
+        Label(tool_bar, text="Hiragana").grid(row=1, column=0, padx=5, pady=5)
+        Label(tool_bar, text="Katakana").grid(row=2, column=0, padx=5, pady=5)
+
+
+
+class Dictonary(tk.Frame):  
+    def __init__(self, parent, controller): 
+            tk.Frame.__init__(self, parent)
+            #widget
+            left_frame = Frame(root, width=200, height = 400)
+            left_frame.grid(row=0, column =0, padx=10, pady=5) 
+
+            Label(left_frame, text="Radiji").grid(row=0, column=0, padx=5, pady=5)
+            image = PhotoImage(file="radiji-logos_transparent.png")
+            logo = image.subsample(3,3)
+            Label(left_frame, image=logo).grid(row=1, column =0, padx=5,pady=5)
+
+            right_frame = Frame(root, width=650, height=400, bg ="white")
+            right_frame.grid(row=0, column = 1, padx=10, pady=5) 
+
+            Label(right_frame, image=image).grid(row=0,column=0, padx=5, pady=5)
+
+                # Create tool bar frame
+            tool_bar = Frame(left_frame, width=180, height=185)
+            tool_bar.grid(row=2, column=0, padx=5, pady=5)
+
+            # Example labels that serve as placeholders for other widgets
+            resources = Button(tool_bar, text="Resources", relief=RAISED).grid(row=0, column=0, padx=5, pady=3, ipadx=10)
+            command = lambda : controller.show_frame(Resources)
+
+
+            dictonary = Button(tool_bar, text="Dictonary", relief=RAISED).grid(row=0, column=1, padx=5, pady=3, ipadx=10)
+
+            # Example labels that could be displayed under the "Tool" menu
+            Label(tool_bar, text="Hiragana").grid(row=1, column=0, padx=5, pady=5)
+            Label(tool_bar, text="Katakana").grid(row=2, column=0, padx=5, pady=5)
+            
+class Resources(tk.Frame):  
+    def __init__(self, parent, controller): 
+            tk.Frame.__init__(self, parent)
+            #widget
+            left_frame = Frame(root, width=200, height = 400)
+            left_frame.grid(row=0, column =0, padx=10, pady=5) 
+
+            Label(left_frame, text="Radiji").grid(row=0, column=0, padx=5, pady=5)
+            image = PhotoImage(file="radiji-logos_transparent.png")
+            logo = image.subsample(3,3)
+            Label(left_frame, image=logo).grid(row=1, column =0, padx=5,pady=5)
+
+            right_frame = Frame(root, width=650, height=400, bg ="white")
+            right_frame.grid(row=0, column = 1, padx=10, pady=5) 
+
+            Label(right_frame, image=image).grid(row=0,column=0, padx=5, pady=5)
+
+                # Create tool bar frame
+            tool_bar = Frame(left_frame, width=180, height=185)
+            tool_bar.grid(row=2, column=0, padx=5, pady=5)
+
+            # Example labels that serve as placeholders for other widgets
+            resources = Button(tool_bar, text="Resources", relief=RAISED).grid(row=0, column=0, padx=5, pady=3, ipadx=10)
+            command = lambda : controller.show_frame(Resources)
+
+
+            dictonary = Button(tool_bar, text="Dictonary", relief=RAISED).grid(row=0, column=1, padx=5, pady=3, ipadx=10)
+
+            # Example labels that could be displayed under the "Tool" menu
+            Label(tool_bar, text="Hiragana").grid(row=1, column=0, padx=5, pady=5)
+            Label(tool_bar, text="Katakana").grid(row=2, column=0, padx=5, pady=5)
+
