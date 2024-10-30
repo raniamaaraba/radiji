@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    align-items:start;
+    justify-content: start;
+    flex-direction: column;
+    height: 100vh;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgba(0,0,0.7);
+    color: white;
+    font-size: 18px;
+    padding-left: 25px;
+
+}
+
+button {
+    margin: 20px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgba(0,0,0);
+    color: white;
+    font-size: 18px;
+    /*padding-left: 10px;
+    */
+}

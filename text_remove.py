@@ -44,4 +44,39 @@ def remove_duplicate_words_new_line(file_path):
 # Use this function with the path to your text file
 remove_duplicate_words_new_line('/Users/rankuluw/Downloads/heisig-data.txt')
 
+import re
 
+def remove_letters_colons_commas_dashes(file_path):
+    with open(file_path, 'r') as file:
+        content = file.read()
+
+    # Remove all letters, colons, commas, and dashes
+    updated_content = re.sub(r'[a-zA-Z:,-]', '', content)
+
+    with open(file_path, 'w') as file:
+        file.write(updated_content)
+
+# Use this function with the path to your text file
+remove_letters_colons_commas_dashes('/Users/rankuluw/Downloads/heisig-data.txt')
+
+def add_new_line_before_colon(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+
+    updated_content = []
+    i = 0
+    while i < len(content):
+        if content[i] == ':' and i > 0:
+            updated_content.append('\n')
+            updated_content.append(content[i-1])
+        else:
+            updated_content.append(content[i])
+        i += 1
+
+    final_content = ''.join(updated_content)
+
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(final_content)
+
+# Use this function with the path to your text file
+add_new_line_before_colon('/Users/rankuluw/Downloads/eod2.txt')
