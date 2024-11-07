@@ -12,6 +12,10 @@
   "description": "",
   "dependencies": {
     "electron": "^33.0.2",
+    "mysql2": "^3.11.3",
     "postgres": "^3.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.5"
   }
 }

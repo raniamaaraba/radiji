@@ -1,21 +1,56 @@
 body {
-    display: flex;
+    /*display: flex;
     align-items:start;
     justify-content: start;
-    flex-direction: column;
+    text-align: center;*/
     height: 100vh;
     font-family: "Noto Sans JP", sans-serif;
 }
 
+header {
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: #45210c;
+}
+
+img {
+    float: left;
+    margin: 5px;
+}
+
+nav{
+    float: left;
+    width:  30%;
+}
+
+nav ul {
+    font-family: "Noto Sans JP", sans-serif;
+    list-style-type: none;
+    padding: 0;
+    color: #45210c;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    height: 300px;
+}
+
+footer {
+    padding: 10px;
+}
+
 input {
+    font-family: "Noto Sans JP", sans-serif;
     width: 300px;
     height: 40px;
     border: none;
-    border-radius: 7px;
-    background-color: rgba(0,0,0.7);
+    border-radius: 75px;
+    background-color: #45210c;
     color: white;
     font-size: 18px;
-    padding-left: 25px;
 
 }
 
